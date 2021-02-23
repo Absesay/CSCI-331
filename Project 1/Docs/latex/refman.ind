@@ -1,0 +1,63 @@
+\begin{theindex}
+
+  \item {$\sim$Array}
+    \subitem {Array}, \hyperpage{7}
+  \item {1array.cpp}, \hyperpage{11}
+    \subitem {operator$<$$<$}, \hyperpage{11}
+    \subitem {operator$>$$>$}, \hyperpage{12}
+  \item {1array.h}, \hyperpage{13}
+
+  \indexspace
+
+  \item {Array}, \hyperpage{5}
+    \subitem {$\sim$Array}, \hyperpage{7}
+    \subitem {Array}, \hyperpage{6}
+    \subitem {arrayCount}, \hyperpage{10}
+    \subitem {getArrayCount}, \hyperpage{7}
+    \subitem {getSize}, \hyperpage{7}
+    \subitem {operator!=}, \hyperpage{8}
+    \subitem {operator$<$$<$}, \hyperpage{9}
+    \subitem {operator$>$$>$}, \hyperpage{9}
+    \subitem {operator=}, \hyperpage{8}
+    \subitem {operator==}, \hyperpage{8}
+    \subitem {operator[]}, \hyperpage{8}
+    \subitem {ptr}, \hyperpage{10}
+    \subitem {size}, \hyperpage{10}
+  \item {arrayCount}
+    \subitem {Array}, \hyperpage{10}
+
+  \indexspace
+
+  \item {getArrayCount}
+    \subitem {Array}, \hyperpage{7}
+  \item {getSize}
+    \subitem {Array}, \hyperpage{7}
+
+  \indexspace
+
+  \item {operator!=}
+    \subitem {Array}, \hyperpage{8}
+  \item {operator$<$$<$}
+    \subitem {1array.cpp}, \hyperpage{11}
+    \subitem {Array}, \hyperpage{9}
+  \item {operator$>$$>$}
+    \subitem {1array.cpp}, \hyperpage{12}
+    \subitem {Array}, \hyperpage{9}
+  \item {operator=}
+    \subitem {Array}, \hyperpage{8}
+  \item {operator==}
+    \subitem {Array}, \hyperpage{8}
+  \item {operator[]}
+    \subitem {Array}, \hyperpage{8}
+
+  \indexspace
+
+  \item {ptr}
+    \subitem {Array}, \hyperpage{10}
+
+  \indexspace
+
+  \item {size}
+    \subitem {Array}, \hyperpage{10}
+
+\end{theindex}

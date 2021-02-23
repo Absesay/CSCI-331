@@ -1,0 +1,104 @@
+\hypertarget{1array_8cpp_source}{}\doxysection{1array.\+cpp}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 }
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022 \textcolor{preprocessor}{\#include "{}array.h"{}}}
+\DoxyCodeLine{00023 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00026 \textcolor{keywordtype}{int} \mbox{\hyperlink{class_array_aec0d00cb7dcfbabb6196311e52844312_aec0d00cb7dcfbabb6196311e52844312}{Array::arrayCount}} = 0;}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{\Hypertarget{1array_8cpp_source_l00036}\mbox{\hyperlink{class_array_ad8df7b9c3fc7f4c8acb83106b2d4c2f5_ad8df7b9c3fc7f4c8acb83106b2d4c2f5}{00036}} \mbox{\hyperlink{class_array_ad8df7b9c3fc7f4c8acb83106b2d4c2f5_ad8df7b9c3fc7f4c8acb83106b2d4c2f5}{Array::Array}}(\textcolor{keywordtype}{int} arraySize) \{}
+\DoxyCodeLine{00037    ++\mbox{\hyperlink{class_array_aec0d00cb7dcfbabb6196311e52844312_aec0d00cb7dcfbabb6196311e52844312}{arrayCount}};                            }
+\DoxyCodeLine{00038    \mbox{\hyperlink{class_array_a8780e83e6e49494e704a4304642e99ef_a8780e83e6e49494e704a4304642e99ef}{size}} = (arraySize > 0 ? arraySize : 10); }
+\DoxyCodeLine{00039    \mbox{\hyperlink{class_array_aed1d2943c52e2503817744cbace2d805_aed1d2943c52e2503817744cbace2d805}{ptr}} = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[\mbox{\hyperlink{class_array_a8780e83e6e49494e704a4304642e99ef_a8780e83e6e49494e704a4304642e99ef}{size}}];                     }
+\DoxyCodeLine{00040    assert(\mbox{\hyperlink{class_array_aed1d2943c52e2503817744cbace2d805_aed1d2943c52e2503817744cbace2d805}{ptr}} != NULL);                     }
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_array_a8780e83e6e49494e704a4304642e99ef_a8780e83e6e49494e704a4304642e99ef}{size}}; i++)}
+\DoxyCodeLine{00043       \mbox{\hyperlink{class_array_aed1d2943c52e2503817744cbace2d805_aed1d2943c52e2503817744cbace2d805}{ptr}}[i] = 0;                          }
+\DoxyCodeLine{00044 \}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{\Hypertarget{1array_8cpp_source_l00051}\mbox{\hyperlink{class_array_a92547f11ba0b2f9d83dd478a38dd06e2_a92547f11ba0b2f9d83dd478a38dd06e2}{00051}} \mbox{\hyperlink{class_array_ad8df7b9c3fc7f4c8acb83106b2d4c2f5_ad8df7b9c3fc7f4c8acb83106b2d4c2f5}{Array::Array}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_array}{Array}} \&init) \{}
+\DoxyCodeLine{00052    ++\mbox{\hyperlink{class_array_aec0d00cb7dcfbabb6196311e52844312_aec0d00cb7dcfbabb6196311e52844312}{arrayCount}};                        }
+\DoxyCodeLine{00053    \mbox{\hyperlink{class_array_a8780e83e6e49494e704a4304642e99ef_a8780e83e6e49494e704a4304642e99ef}{size}} = init.\mbox{\hyperlink{class_array_a8780e83e6e49494e704a4304642e99ef_a8780e83e6e49494e704a4304642e99ef}{size}};                    }
+\DoxyCodeLine{00054    \mbox{\hyperlink{class_array_aed1d2943c52e2503817744cbace2d805_aed1d2943c52e2503817744cbace2d805}{ptr}} = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[\mbox{\hyperlink{class_array_a8780e83e6e49494e704a4304642e99ef_a8780e83e6e49494e704a4304642e99ef}{size}}];                }
+\DoxyCodeLine{00055    assert(\mbox{\hyperlink{class_array_aed1d2943c52e2503817744cbace2d805_aed1d2943c52e2503817744cbace2d805}{ptr}} != NULL);               }
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_array_a8780e83e6e49494e704a4304642e99ef_a8780e83e6e49494e704a4304642e99ef}{size}}; i++)}
+\DoxyCodeLine{00058       \mbox{\hyperlink{class_array_aed1d2943c52e2503817744cbace2d805_aed1d2943c52e2503817744cbace2d805}{ptr}}[i] = init.\mbox{\hyperlink{class_array_aed1d2943c52e2503817744cbace2d805_aed1d2943c52e2503817744cbace2d805}{ptr}}[i];          }
+\DoxyCodeLine{00059 \}}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{\Hypertarget{1array_8cpp_source_l00065}\mbox{\hyperlink{class_array_abcabe567f41f7798d2f97babcc443c6f_abcabe567f41f7798d2f97babcc443c6f}{00065}} \mbox{\hyperlink{class_array_abcabe567f41f7798d2f97babcc443c6f_abcabe567f41f7798d2f97babcc443c6f}{Array::\string~Array}}() \{}
+\DoxyCodeLine{00066    -\/-\/\mbox{\hyperlink{class_array_aec0d00cb7dcfbabb6196311e52844312_aec0d00cb7dcfbabb6196311e52844312}{arrayCount}};  }
+\DoxyCodeLine{00067    \textcolor{keyword}{delete} [] \mbox{\hyperlink{class_array_aed1d2943c52e2503817744cbace2d805_aed1d2943c52e2503817744cbace2d805}{ptr}};}
+\DoxyCodeLine{00068 \}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{\Hypertarget{1array_8cpp_source_l00076}\mbox{\hyperlink{class_array_af29bf627de157570d00c700773884e20_af29bf627de157570d00c700773884e20}{00076}} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_array_af29bf627de157570d00c700773884e20_af29bf627de157570d00c700773884e20}{Array::getSize}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_array_a8780e83e6e49494e704a4304642e99ef_a8780e83e6e49494e704a4304642e99ef}{size}}; \}}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{\Hypertarget{1array_8cpp_source_l00084}\mbox{\hyperlink{class_array_a326711b256f5d18b8b7a82c33bfa4fca_a326711b256f5d18b8b7a82c33bfa4fca}{00084}} \textcolor{keyword}{const} \mbox{\hyperlink{class_array}{Array}}\& \mbox{\hyperlink{class_array_a326711b256f5d18b8b7a82c33bfa4fca_a326711b256f5d18b8b7a82c33bfa4fca}{Array::operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_array}{Array}}\& right) \{}
+\DoxyCodeLine{00085    \textcolor{keywordflow}{if} (\&right != \textcolor{keyword}{this}) \{  }
+\DoxyCodeLine{00086       \textcolor{keyword}{delete} [] \mbox{\hyperlink{class_array_aed1d2943c52e2503817744cbace2d805_aed1d2943c52e2503817744cbace2d805}{ptr}};     }
+\DoxyCodeLine{00087       \mbox{\hyperlink{class_array_a8780e83e6e49494e704a4304642e99ef_a8780e83e6e49494e704a4304642e99ef}{size}} = right.\mbox{\hyperlink{class_array_a8780e83e6e49494e704a4304642e99ef_a8780e83e6e49494e704a4304642e99ef}{size}};    }
+\DoxyCodeLine{00088       \mbox{\hyperlink{class_array_aed1d2943c52e2503817744cbace2d805_aed1d2943c52e2503817744cbace2d805}{ptr}} = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[\mbox{\hyperlink{class_array_a8780e83e6e49494e704a4304642e99ef_a8780e83e6e49494e704a4304642e99ef}{size}}]; }
+\DoxyCodeLine{00089       assert(\mbox{\hyperlink{class_array_aed1d2943c52e2503817744cbace2d805_aed1d2943c52e2503817744cbace2d805}{ptr}} != NULL);}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_array_a8780e83e6e49494e704a4304642e99ef_a8780e83e6e49494e704a4304642e99ef}{size}}; i++)}
+\DoxyCodeLine{00092          \mbox{\hyperlink{class_array_aed1d2943c52e2503817744cbace2d805_aed1d2943c52e2503817744cbace2d805}{ptr}}[i] = right.\mbox{\hyperlink{class_array_aed1d2943c52e2503817744cbace2d805_aed1d2943c52e2503817744cbace2d805}{ptr}}[i];  }
+\DoxyCodeLine{00093    \}}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00095    \textcolor{keywordflow}{return} *\textcolor{keyword}{this};  }
+\DoxyCodeLine{00096 \}}
+\DoxyCodeLine{00097 }
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{\Hypertarget{1array_8cpp_source_l00106}\mbox{\hyperlink{class_array_ae22797e879a93defc81b7a422c5ebdf4_ae22797e879a93defc81b7a422c5ebdf4}{00106}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_array_ae22797e879a93defc81b7a422c5ebdf4_ae22797e879a93defc81b7a422c5ebdf4}{Array::operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_array}{Array}}\& right)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00107    \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_array_a8780e83e6e49494e704a4304642e99ef_a8780e83e6e49494e704a4304642e99ef}{size}} != right.\mbox{\hyperlink{class_array_a8780e83e6e49494e704a4304642e99ef_a8780e83e6e49494e704a4304642e99ef}{size}})}
+\DoxyCodeLine{00108       \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_array_a8780e83e6e49494e704a4304642e99ef_a8780e83e6e49494e704a4304642e99ef}{size}}; i++)}
+\DoxyCodeLine{00111       \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_array_aed1d2943c52e2503817744cbace2d805_aed1d2943c52e2503817744cbace2d805}{ptr}}[i] != right.\mbox{\hyperlink{class_array_aed1d2943c52e2503817744cbace2d805_aed1d2943c52e2503817744cbace2d805}{ptr}}[i])}
+\DoxyCodeLine{00112          \textcolor{keywordflow}{return} \textcolor{keyword}{false};                 }
+\DoxyCodeLine{00113    \textcolor{keywordflow}{return} \textcolor{keyword}{true};                       }
+\DoxyCodeLine{00114 \}}
+\DoxyCodeLine{00115 }
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{\Hypertarget{1array_8cpp_source_l00124}\mbox{\hyperlink{class_array_a8f9bf4df60147851da5d1d197c58305f_a8f9bf4df60147851da5d1d197c58305f}{00124}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_array_a8f9bf4df60147851da5d1d197c58305f_a8f9bf4df60147851da5d1d197c58305f}{Array::operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_array}{Array}}\& right)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{00125    \textcolor{keywordflow}{return} !(*\textcolor{keyword}{this} == right);}
+\DoxyCodeLine{00126 \}}
+\DoxyCodeLine{00127 }
+\DoxyCodeLine{00128 }
+\DoxyCodeLine{\Hypertarget{1array_8cpp_source_l00134}\mbox{\hyperlink{class_array_a8d65c656861d973d987d744da1bfe3ae_a8d65c656861d973d987d744da1bfe3ae}{00134}} \textcolor{keywordtype}{int}\& \mbox{\hyperlink{class_array_a8d65c656861d973d987d744da1bfe3ae_a8d65c656861d973d987d744da1bfe3ae}{Array::operator[]}}(\textcolor{keywordtype}{int} subscript) \{}
+\DoxyCodeLine{00135    assert(0 <= subscript \&\& subscript < \mbox{\hyperlink{class_array_a8780e83e6e49494e704a4304642e99ef_a8780e83e6e49494e704a4304642e99ef}{size}});}
+\DoxyCodeLine{00136    \textcolor{keywordflow}{return} \mbox{\hyperlink{class_array_aed1d2943c52e2503817744cbace2d805_aed1d2943c52e2503817744cbace2d805}{ptr}}[subscript];}
+\DoxyCodeLine{00137 \}}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00139 }
+\DoxyCodeLine{\Hypertarget{1array_8cpp_source_l00145}\mbox{\hyperlink{class_array_aabdedbfd0e0010baddca16efc41125ec_aabdedbfd0e0010baddca16efc41125ec}{00145}} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_array_aabdedbfd0e0010baddca16efc41125ec_aabdedbfd0e0010baddca16efc41125ec}{Array::getArrayCount}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_array_aec0d00cb7dcfbabb6196311e52844312_aec0d00cb7dcfbabb6196311e52844312}{arrayCount}}; \}}
+\DoxyCodeLine{00146 }
+\DoxyCodeLine{00147 }
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{\Hypertarget{1array_8cpp_source_l00155}\mbox{\hyperlink{class_array_a533857db5ed0f67904824ff94d7617b9_a533857db5ed0f67904824ff94d7617b9}{00155}} istream\& \mbox{\hyperlink{1array_8cpp_a14edf7ce8faebaaec1b5e81582fed73b_a14edf7ce8faebaaec1b5e81582fed73b}{operator>>}}(istream \&input, \mbox{\hyperlink{class_array}{Array}} \&a) \{}
+\DoxyCodeLine{00156    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < a.\mbox{\hyperlink{class_array_a8780e83e6e49494e704a4304642e99ef_a8780e83e6e49494e704a4304642e99ef}{size}}; i++)}
+\DoxyCodeLine{00157       input >> a.\mbox{\hyperlink{class_array_aed1d2943c52e2503817744cbace2d805_aed1d2943c52e2503817744cbace2d805}{ptr}}[i];}
+\DoxyCodeLine{00158    \textcolor{keywordflow}{return} input;}
+\DoxyCodeLine{00159 \}}
+\DoxyCodeLine{00160 }
+\DoxyCodeLine{00161 }
+\DoxyCodeLine{\Hypertarget{1array_8cpp_source_l00168}\mbox{\hyperlink{class_array_a43c7c4379f20a65d2d450c8f2f441ca9_a43c7c4379f20a65d2d450c8f2f441ca9}{00168}} ostream\& \mbox{\hyperlink{1array_8cpp_a37415f259690744fe14f0589d4e74fb7_a37415f259690744fe14f0589d4e74fb7}{operator<<}}(ostream \&output, \textcolor{keyword}{const} \mbox{\hyperlink{class_array}{Array}} \&a) \{}
+\DoxyCodeLine{00169    \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{00170    \textcolor{keywordflow}{for} (i = 0; i < a.\mbox{\hyperlink{class_array_a8780e83e6e49494e704a4304642e99ef_a8780e83e6e49494e704a4304642e99ef}{size}}; i++) \{}
+\DoxyCodeLine{00171       output << a.\mbox{\hyperlink{class_array_aed1d2943c52e2503817744cbace2d805_aed1d2943c52e2503817744cbace2d805}{ptr}}[i] << \textcolor{charliteral}{' '};}
+\DoxyCodeLine{00172       \textcolor{keywordflow}{if} ((i + 1) \% 10 == 0)}
+\DoxyCodeLine{00173          output << endl;}
+\DoxyCodeLine{00174    \}}
+\DoxyCodeLine{00175 }
+\DoxyCodeLine{00176    \textcolor{keywordflow}{if} (i \% 10 != 0)}
+\DoxyCodeLine{00177       output << endl;}
+\DoxyCodeLine{00178    \textcolor{keywordflow}{return} output;}
+\DoxyCodeLine{00179 \}}
+\DoxyCodeLine{00180 }
+
+\end{DoxyCode}

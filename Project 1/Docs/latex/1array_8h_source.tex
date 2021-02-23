@@ -1,0 +1,45 @@
+\hypertarget{1array_8h_source}{}\doxysection{1array.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 }
+\DoxyCodeLine{00021 \textcolor{preprocessor}{\#ifndef ARRAY\_H}}
+\DoxyCodeLine{00022 \textcolor{preprocessor}{\#define ARRAY\_H}}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00025 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{\Hypertarget{1array_8h_source_l00028}\mbox{\hyperlink{class_array}{00028}} \textcolor{keyword}{class }\mbox{\hyperlink{class_array}{Array}} \{}
+\DoxyCodeLine{00035 \textcolor{keyword}{friend} istream\& \mbox{\hyperlink{1array_8cpp_a14edf7ce8faebaaec1b5e81582fed73b_a14edf7ce8faebaaec1b5e81582fed73b}{operator>>}}(istream \&, \mbox{\hyperlink{class_array}{Array}} \&);}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00043 \textcolor{keyword}{friend} ostream\& \mbox{\hyperlink{1array_8cpp_a37415f259690744fe14f0589d4e74fb7_a37415f259690744fe14f0589d4e74fb7}{operator<<}}(ostream \&, \textcolor{keyword}{const} \mbox{\hyperlink{class_array}{Array}} \&);}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045 \textcolor{keyword}{public}:}
+\DoxyCodeLine{00053 \mbox{\hyperlink{class_array}{Array}}(\textcolor{keywordtype}{int} = 10); }
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00059 \mbox{\hyperlink{class_array}{Array}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_array}{Array}} \&); }
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00065 \string~\mbox{\hyperlink{class_array}{Array}}(); }
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00072 \textcolor{keywordtype}{int} getSize() \textcolor{keyword}{const}; }
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00079 \textcolor{keyword}{const} \mbox{\hyperlink{class_array}{Array}}\& operator=(\textcolor{keyword}{const} \mbox{\hyperlink{class_array}{Array}} \&); }
+\DoxyCodeLine{00080 }
+\DoxyCodeLine{00088 \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{class_array}{Array}} \&) \textcolor{keyword}{const}; }
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00097 \textcolor{keywordtype}{bool} operator!=(\textcolor{keyword}{const} \mbox{\hyperlink{class_array}{Array}} \&) \textcolor{keyword}{const};}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{00104 \textcolor{keywordtype}{int}\& operator[](\textcolor{keywordtype}{int}); }
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00111 \textcolor{keyword}{static} \textcolor{keywordtype}{int} getArrayCount(); }
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{1array_8h_source_l00114}\mbox{\hyperlink{class_array_aed1d2943c52e2503817744cbace2d805_aed1d2943c52e2503817744cbace2d805}{00114}}    \textcolor{keywordtype}{int}* \mbox{\hyperlink{class_array_aed1d2943c52e2503817744cbace2d805_aed1d2943c52e2503817744cbace2d805}{ptr}};                          \textcolor{comment}{// pointer to first element of array}}
+\DoxyCodeLine{\Hypertarget{1array_8h_source_l00115}\mbox{\hyperlink{class_array_a8780e83e6e49494e704a4304642e99ef_a8780e83e6e49494e704a4304642e99ef}{00115}}    \textcolor{keywordtype}{int} \mbox{\hyperlink{class_array_a8780e83e6e49494e704a4304642e99ef_a8780e83e6e49494e704a4304642e99ef}{size}};                          \textcolor{comment}{// size of the array}}
+\DoxyCodeLine{\Hypertarget{1array_8h_source_l00116}\mbox{\hyperlink{class_array_aec0d00cb7dcfbabb6196311e52844312_aec0d00cb7dcfbabb6196311e52844312}{00116}}    \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_array_aec0d00cb7dcfbabb6196311e52844312_aec0d00cb7dcfbabb6196311e52844312}{arrayCount}};             \textcolor{comment}{// \# of Arrays instantiated}}
+\DoxyCodeLine{00117 \};}
+\DoxyCodeLine{00118 }
+\DoxyCodeLine{00119 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00120 }
+
+\end{DoxyCode}

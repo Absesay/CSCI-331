@@ -1,0 +1,61 @@
+\hypertarget{1array_8cpp}{}\doxysection{1array.\+cpp File Reference}
+\label{1array_8cpp}\index{1array.cpp@{1array.cpp}}
+{\ttfamily \#include \char`\"{}array.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+Include dependency graph for 1array.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{1array_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+istream \& \mbox{\hyperlink{1array_8cpp_a14edf7ce8faebaaec1b5e81582fed73b_a14edf7ce8faebaaec1b5e81582fed73b}{operator$>$$>$}} (istream \&input, \mbox{\hyperlink{class_array}{Array}} \&a)
+\item 
+ostream \& \mbox{\hyperlink{1array_8cpp_a37415f259690744fe14f0589d4e74fb7_a37415f259690744fe14f0589d4e74fb7}{operator$<$$<$}} (ostream \&output, const \mbox{\hyperlink{class_array}{Array}} \&a)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{1array_8cpp_a37415f259690744fe14f0589d4e74fb7_a37415f259690744fe14f0589d4e74fb7}\label{1array_8cpp_a37415f259690744fe14f0589d4e74fb7_a37415f259690744fe14f0589d4e74fb7}} 
+\index{1array.cpp@{1array.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!1array.cpp@{1array.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{output,  }\item[{const \mbox{\hyperlink{class_array}{Array}} \&}]{a }\end{DoxyParamCaption})}
+
+\DoxyHorRuler{0}
+ operator$<$$<$ Overloaded output operator for class \mbox{\hyperlink{class_array}{Array}} \begin{DoxyReturn}{Returns}
+returns output to ostream 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+Preconditions\+: a.\+ptr must point to an array with size at least a.\+size 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Postconditions\+: The first a.\+size elements of a.\+ptr are sent to the output istream 10 per line with a trailing endl 
+\end{DoxyPostcond}
+
+
+Definition at line \mbox{\hyperlink{1array_8cpp_source_l00168}{168}} of file \mbox{\hyperlink{1array_8cpp_source}{1array.\+cpp}}.
+
+\mbox{\Hypertarget{1array_8cpp_a14edf7ce8faebaaec1b5e81582fed73b_a14edf7ce8faebaaec1b5e81582fed73b}\label{1array_8cpp_a14edf7ce8faebaaec1b5e81582fed73b_a14edf7ce8faebaaec1b5e81582fed73b}} 
+\index{1array.cpp@{1array.cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!1array.cpp@{1array.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{input,  }\item[{\mbox{\hyperlink{class_array}{Array}} \&}]{a }\end{DoxyParamCaption})}
+
+\DoxyHorRuler{0}
+ operator$>$$>$ Overloaded input operator for class \mbox{\hyperlink{class_array}{Array}}; inputs values for entire array. \begin{DoxyReturn}{Returns}
+returns input from istream 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+Preconditions\+: a.\+ptr must point to an array with size at least a.\+size 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Postconditions\+: The first a.\+size elements of a.\+ptr are filled with integers read from the input istream 
+\end{DoxyPostcond}
+
+
+Definition at line \mbox{\hyperlink{1array_8cpp_source_l00155}{155}} of file \mbox{\hyperlink{1array_8cpp_source}{1array.\+cpp}}.
+

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="namespacestd" kind="namespace" language="C++">
+    <compoundname>std</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><hruler/>
+ ARRAY.H Simple class <ref refid="class_array" kindref="compound">Array</ref> (for integers) </para>
+<sect2 id="namespacestd_1autotoc_md2">
+<title>Authors: Deitel/Deitel (Additional comments by Olson and Zander)</title>
+<para><ref refid="class_array" kindref="compound">Array</ref> class: like an int array (retains all functionality) but also includes additional features: <ndash/> allows input and output of the whole array <ndash/> allows for comparison of 2 arrays, element by element <ndash/> allows for assignment of 2 arrays <ndash/> size is part of the class (so no longer needs to be passed) <ndash/> includes range checking, program terminates for out-of-bound subscripts</para>
+<para>Implementation and assumptions: <ndash/> size defaults to a fixed size of 10 if size is not specified <ndash/> array elements are initialized to zero <ndash/> user must enter valid integers when using &gt;&gt; </para>
+</sect2>
+<sect2 id="namespacestd_1autotoc_md3">
+<title>– in &lt;&lt;, integers are displayed 10 per line</title>
+</sect2>
+    </detaileddescription>
+    <location file="1array.h" line="25" column="1"/>
+  </compounddef>
+</doxygen>
