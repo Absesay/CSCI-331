@@ -8,20 +8,18 @@ using namespace std;
 class DelimTextBuffer
 {
 public:
+    DelimTextBuffer(char Delim = ',', int maxBytes = 1000);
+    int Read (istream & infile);
+    //int Write(ostream & file);
+    //int Pack (const char * str, int size = -1);
+    //int Unpack (char * str);
 
-inline int Read(ifstream & infile);
-/*int Read (istream & file);
-int Write(ostream & file);
-int Pack (const char * str, int size = -1);
-int Unpack (char * str);*/
-/*
-private: 
-char Delim; // delimiter c t hold field values
-char* Buffer; // character ~rrayf oacked fields
-int Buffersize;
-int MaxBytes; // current size o p i'n the in . umber of characters ,. int MaxBytes; / I maximum n
+private:
 
- // packing/unpacking position in buffer
-    int NextByte; */
+    char Delim; // delimiter
+    char* Buffer; // Array to hold information piece in
+    int Buffersize; // size of field
+    int MaxBytes; // Max number of chars in the buffer
+    int NextByte; // packing/unpacking position in buffer
 };
     
