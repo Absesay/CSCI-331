@@ -1,0 +1,78 @@
+\hypertarget{_location_8h_source}{}\doxysection{Location.\+h}
+\label{_location_8h_source}\index{Location.h@{Location.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 }
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#ifndef LOCATION\_HEADER}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#define LOCATION\_HEADER}}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_delim_buffer_8h}{DelimBuffer.h}}"{}}}
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00017 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{\Hypertarget{_location_8h_source_l00021}\mbox{\hyperlink{class_location}{00021}} \textcolor{keyword}{class }\mbox{\hyperlink{class_location}{Location}}}
+\DoxyCodeLine{00022 \{       }
+\DoxyCodeLine{00023     \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_location_8h_source_l00025}\mbox{\hyperlink{class_location_a87790c14997fd8cdd12080c78c9794bb_a87790c14997fd8cdd12080c78c9794bb}{00025}}         \mbox{\hyperlink{class_location_a87790c14997fd8cdd12080c78c9794bb_a87790c14997fd8cdd12080c78c9794bb}{Location}}()}
+\DoxyCodeLine{00026         \{}
+\DoxyCodeLine{00027             zipcode = \textcolor{stringliteral}{"{} "{}};}
+\DoxyCodeLine{00028             name = \textcolor{stringliteral}{"{} "{}};}
+\DoxyCodeLine{00029             county = \textcolor{stringliteral}{"{} "{}};}
+\DoxyCodeLine{00030             state = \textcolor{stringliteral}{"{} "{}};}
+\DoxyCodeLine{00031             latitude = 0;}
+\DoxyCodeLine{00032             longitude = 0;}
+\DoxyCodeLine{00033         \};}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{\Hypertarget{_location_8h_source_l00042}\mbox{\hyperlink{class_location_aff42f3c8cd7d2d6b22ff9adb20924164_aff42f3c8cd7d2d6b22ff9adb20924164}{00042}}         \mbox{\hyperlink{class_location_aff42f3c8cd7d2d6b22ff9adb20924164_aff42f3c8cd7d2d6b22ff9adb20924164}{Location}}(\textcolor{keywordtype}{string} a, \textcolor{keywordtype}{string} b, \textcolor{keywordtype}{string} c, \textcolor{keywordtype}{string} d, \textcolor{keywordtype}{float} e, \textcolor{keywordtype}{float} f)}
+\DoxyCodeLine{00043         \{}
+\DoxyCodeLine{00044             zipcode = a;}
+\DoxyCodeLine{00045             name = b;}
+\DoxyCodeLine{00046             county = c;}
+\DoxyCodeLine{00047             state = d;}
+\DoxyCodeLine{00048             latitude = e;}
+\DoxyCodeLine{00049             longitude = f;}
+\DoxyCodeLine{00050         \};}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{\Hypertarget{_location_8h_source_l00054}\mbox{\hyperlink{class_location_ad69547954c82ba2e11273114cd13030a_ad69547954c82ba2e11273114cd13030a}{00054}}         \mbox{\hyperlink{class_location_ad69547954c82ba2e11273114cd13030a_ad69547954c82ba2e11273114cd13030a}{Location}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_location}{Location}}\& loc)}
+\DoxyCodeLine{00055         \{}
+\DoxyCodeLine{00056             zipcode = loc.\mbox{\hyperlink{class_location_ab95582d956fd99f93e20c58998b9a321_ab95582d956fd99f93e20c58998b9a321}{getZipCode}}();}
+\DoxyCodeLine{00057             name = loc.\mbox{\hyperlink{class_location_a45520570450de05653906e638f876643_a45520570450de05653906e638f876643}{getName}}();}
+\DoxyCodeLine{00058             county = loc.\mbox{\hyperlink{class_location_a3352c9e3cfcf66aa6a21bcd322763eb3_a3352c9e3cfcf66aa6a21bcd322763eb3}{getCounty}}();}
+\DoxyCodeLine{00059             state = loc.\mbox{\hyperlink{class_location_aeb52279f65f21178b8b0f0451dbfe2ea_aeb52279f65f21178b8b0f0451dbfe2ea}{getState}}();}
+\DoxyCodeLine{00060             latitude = loc.\mbox{\hyperlink{class_location_a2357f61ad1c19b88ee241a1ea48c85a6_a2357f61ad1c19b88ee241a1ea48c85a6}{getLat}}();}
+\DoxyCodeLine{00061             longitude = loc.\mbox{\hyperlink{class_location_a8e6418006bc0f160ce8e1e2c39b06b53_a8e6418006bc0f160ce8e1e2c39b06b53}{getLong}}();}
+\DoxyCodeLine{00062         \};}
+\DoxyCodeLine{00063         }
+\DoxyCodeLine{00067         \textcolor{keywordtype}{string} getZipCode() \textcolor{keyword}{const};}
+\DoxyCodeLine{00072         \textcolor{keywordtype}{void} setZipCode(\textcolor{keywordtype}{string} val);}
+\DoxyCodeLine{00076         \textcolor{keywordtype}{string} getName() \textcolor{keyword}{const};}
+\DoxyCodeLine{00081         \textcolor{keywordtype}{void} setName(\textcolor{keywordtype}{string} val);}
+\DoxyCodeLine{00085         \textcolor{keywordtype}{string} getCounty() \textcolor{keyword}{const};}
+\DoxyCodeLine{00090         \textcolor{keywordtype}{void} setCounty(\textcolor{keywordtype}{string} val);}
+\DoxyCodeLine{00094         \textcolor{keywordtype}{string} getState() \textcolor{keyword}{const};}
+\DoxyCodeLine{00099         \textcolor{keywordtype}{void} setState(\textcolor{keywordtype}{string} val);}
+\DoxyCodeLine{00103         \textcolor{keywordtype}{float} getLat() \textcolor{keyword}{const};}
+\DoxyCodeLine{00108         \textcolor{keywordtype}{void} setLat(\textcolor{keywordtype}{float} val);}
+\DoxyCodeLine{00112         \textcolor{keywordtype}{float} getLong() \textcolor{keyword}{const};}
+\DoxyCodeLine{00117         \textcolor{keywordtype}{void} setLong(\textcolor{keywordtype}{float} val);}
+\DoxyCodeLine{00120         \textcolor{keywordtype}{bool} unpack(\mbox{\hyperlink{class_delim_buffer}{DelimBuffer}} \&buffer);}
+\DoxyCodeLine{00123         \textcolor{keywordtype}{void} operator= (\textcolor{keyword}{const} \mbox{\hyperlink{class_location}{Location}} \&loc);}
+\DoxyCodeLine{00126         \textcolor{keyword}{friend} ostream\& \mbox{\hyperlink{_location_8cpp_a26bca297e30ebfa7e6b08bb663c85ec8_a26bca297e30ebfa7e6b08bb663c85ec8}{operator<< }}(ostream\& out, \textcolor{keyword}{const} \mbox{\hyperlink{class_location}{Location}} \&loc);}
+\DoxyCodeLine{00127         }
+\DoxyCodeLine{00128         \textcolor{keywordtype}{bool} operator< (\textcolor{keyword}{const} \mbox{\hyperlink{class_location}{Location}} \&loc) \textcolor{keyword}{const};}
+\DoxyCodeLine{00129         }
+\DoxyCodeLine{00130         \textcolor{keywordtype}{bool} operator> (\textcolor{keyword}{const} \mbox{\hyperlink{class_location}{Location}} \&loc) \textcolor{keyword}{const};}
+\DoxyCodeLine{00131         }
+\DoxyCodeLine{00132     \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_location_8h_source_l00133}\mbox{\hyperlink{class_location_a0bdc3d7ada1edfc864897e1de764e327_a0bdc3d7ada1edfc864897e1de764e327}{00133}}         \textcolor{keywordtype}{string} \mbox{\hyperlink{class_location_a0bdc3d7ada1edfc864897e1de764e327_a0bdc3d7ada1edfc864897e1de764e327}{zipcode}}; }
+\DoxyCodeLine{\Hypertarget{_location_8h_source_l00134}\mbox{\hyperlink{class_location_a0ae46c7127ec349e484ed075c91ba258_a0ae46c7127ec349e484ed075c91ba258}{00134}}         \textcolor{keywordtype}{string} \mbox{\hyperlink{class_location_a0ae46c7127ec349e484ed075c91ba258_a0ae46c7127ec349e484ed075c91ba258}{name}}; }
+\DoxyCodeLine{\Hypertarget{_location_8h_source_l00135}\mbox{\hyperlink{class_location_a648dadbf656ddaff096a36faa271a165_a648dadbf656ddaff096a36faa271a165}{00135}}         \textcolor{keywordtype}{string} \mbox{\hyperlink{class_location_a648dadbf656ddaff096a36faa271a165_a648dadbf656ddaff096a36faa271a165}{county}}; }
+\DoxyCodeLine{\Hypertarget{_location_8h_source_l00136}\mbox{\hyperlink{class_location_a0f7dd3da48a974e44faa533bf74b133e_a0f7dd3da48a974e44faa533bf74b133e}{00136}}         \textcolor{keywordtype}{string} \mbox{\hyperlink{class_location_a0f7dd3da48a974e44faa533bf74b133e_a0f7dd3da48a974e44faa533bf74b133e}{state}}; }
+\DoxyCodeLine{\Hypertarget{_location_8h_source_l00137}\mbox{\hyperlink{class_location_a194bf3edf130d2a4bf281720e7d01409_a194bf3edf130d2a4bf281720e7d01409}{00137}}         \textcolor{keywordtype}{float} \mbox{\hyperlink{class_location_a194bf3edf130d2a4bf281720e7d01409_a194bf3edf130d2a4bf281720e7d01409}{latitude}}; }
+\DoxyCodeLine{\Hypertarget{_location_8h_source_l00138}\mbox{\hyperlink{class_location_ae36169ef2dfcad63e26b492a6a82b990_ae36169ef2dfcad63e26b492a6a82b990}{00138}}         \textcolor{keywordtype}{float} \mbox{\hyperlink{class_location_ae36169ef2dfcad63e26b492a6a82b990_ae36169ef2dfcad63e26b492a6a82b990}{longitude}}; }
+\DoxyCodeLine{00139 \};}
+\DoxyCodeLine{00140 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

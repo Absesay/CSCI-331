@@ -1,0 +1,41 @@
+\hypertarget{_delim_buffer_8cpp_source}{}\doxysection{Delim\+Buffer.\+cpp}
+\label{_delim_buffer_8cpp_source}\index{DelimBuffer.cpp@{DelimBuffer.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 }
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_delim_buffer_8h}{DelimBuffer.h}}"{}}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{\Hypertarget{_delim_buffer_8cpp_source_l00016}\mbox{\hyperlink{class_delim_buffer_a63f8b3423891c18afe3d7741d980750e_a63f8b3423891c18afe3d7741d980750e}{00016}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_delim_buffer_a63f8b3423891c18afe3d7741d980750e_a63f8b3423891c18afe3d7741d980750e}{DelimBuffer :: clear}}()}
+\DoxyCodeLine{00017 \{}
+\DoxyCodeLine{00018     \mbox{\hyperlink{class_delim_buffer_a2d46f86f8f91420aaa5cb02df7ece685_a2d46f86f8f91420aaa5cb02df7ece685}{bufferSize}} = 0;}
+\DoxyCodeLine{00019     \mbox{\hyperlink{class_delim_buffer_aea35233913764f0168394bc879c3015f_aea35233913764f0168394bc879c3015f}{nextCharIndex}} = 0;}
+\DoxyCodeLine{00020 \}}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{\Hypertarget{_delim_buffer_8cpp_source_l00025}\mbox{\hyperlink{class_delim_buffer_a3a5cb9de6a97526fb72d448437071acc_a3a5cb9de6a97526fb72d448437071acc}{00025}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_delim_buffer_a3a5cb9de6a97526fb72d448437071acc_a3a5cb9de6a97526fb72d448437071acc}{DelimBuffer :: read}} (istream\& infile)}
+\DoxyCodeLine{00026 \{}
+\DoxyCodeLine{00027     \textcolor{keywordflow}{if} (infile.fail()) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00028     getline(infile, \mbox{\hyperlink{class_delim_buffer_a3af44793c1ea61e1fbb12cf201ab9027_a3af44793c1ea61e1fbb12cf201ab9027}{buffer}}, (\textcolor{keywordtype}{char})infile.eof());}
+\DoxyCodeLine{00029     \mbox{\hyperlink{class_delim_buffer_a2d46f86f8f91420aaa5cb02df7ece685_a2d46f86f8f91420aaa5cb02df7ece685}{bufferSize}} = \mbox{\hyperlink{class_delim_buffer_a3af44793c1ea61e1fbb12cf201ab9027_a3af44793c1ea61e1fbb12cf201ab9027}{buffer}}.length();}
+\DoxyCodeLine{00030     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00031 \}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{\Hypertarget{_delim_buffer_8cpp_source_l00036}\mbox{\hyperlink{class_delim_buffer_a4250ba9484e8c381d937f99c4007c0f5_a4250ba9484e8c381d937f99c4007c0f5}{00036}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_delim_buffer_a4250ba9484e8c381d937f99c4007c0f5_a4250ba9484e8c381d937f99c4007c0f5}{DelimBuffer :: unpack}}(\textcolor{keywordtype}{string}\& aStr)}
+\DoxyCodeLine{00037 \{}
+\DoxyCodeLine{00038     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_delim_buffer_aea35233913764f0168394bc879c3015f_aea35233913764f0168394bc879c3015f}{nextCharIndex}} > \mbox{\hyperlink{class_delim_buffer_a2d46f86f8f91420aaa5cb02df7ece685_a2d46f86f8f91420aaa5cb02df7ece685}{bufferSize}}) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00039     }
+\DoxyCodeLine{00040     \textcolor{keywordtype}{int} len = -\/1; \textcolor{comment}{// length of unpacking string}}
+\DoxyCodeLine{00041     \textcolor{keywordtype}{int} start = \mbox{\hyperlink{class_delim_buffer_aea35233913764f0168394bc879c3015f_aea35233913764f0168394bc879c3015f}{nextCharIndex}}; \textcolor{comment}{// first character to be unpacked}}
+\DoxyCodeLine{00042     }
+\DoxyCodeLine{00043     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = start; i < \mbox{\hyperlink{class_delim_buffer_a2d46f86f8f91420aaa5cb02df7ece685_a2d46f86f8f91420aaa5cb02df7ece685}{bufferSize}}; i++)}
+\DoxyCodeLine{00044         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_delim_buffer_a3af44793c1ea61e1fbb12cf201ab9027_a3af44793c1ea61e1fbb12cf201ab9027}{buffer}}[i] == \mbox{\hyperlink{class_delim_buffer_a141dc90a0a66aeca099ddbdf83d93fd7_a141dc90a0a66aeca099ddbdf83d93fd7}{delim}} || \mbox{\hyperlink{class_delim_buffer_a3af44793c1ea61e1fbb12cf201ab9027_a3af44793c1ea61e1fbb12cf201ab9027}{buffer}}[i] == \textcolor{charliteral}{'\(\backslash\)n'}) \{len = i -\/ start; \textcolor{keywordflow}{break};\}}
+\DoxyCodeLine{00045     }
+\DoxyCodeLine{00046     \textcolor{keywordflow}{if} (len == -\/1) \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \textcolor{comment}{// delimeter not found}}
+\DoxyCodeLine{00047     \mbox{\hyperlink{class_delim_buffer_aea35233913764f0168394bc879c3015f_aea35233913764f0168394bc879c3015f}{nextCharIndex}} += len + 1;}
+\DoxyCodeLine{00048     }
+\DoxyCodeLine{00049     aStr = \mbox{\hyperlink{class_delim_buffer_a3af44793c1ea61e1fbb12cf201ab9027_a3af44793c1ea61e1fbb12cf201ab9027}{buffer}}.substr(start, len);}
+\DoxyCodeLine{00050     aStr[len] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00051     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00052 \}}
+
+\end{DoxyCode}

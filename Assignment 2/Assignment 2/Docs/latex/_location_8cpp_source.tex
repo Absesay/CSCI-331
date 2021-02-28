@@ -1,0 +1,75 @@
+\hypertarget{_location_8cpp_source}{}\doxysection{Location.\+cpp}
+\label{_location_8cpp_source}\index{Location.cpp@{Location.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 }
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_location_8h}{Location.h}}"{}}}
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{00013 }
+\DoxyCodeLine{\Hypertarget{_location_8cpp_source_l00018}\mbox{\hyperlink{class_location_aa9e516bb3ee5c854f28933ac86c2feca_aa9e516bb3ee5c854f28933ac86c2feca}{00018}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_location_aa9e516bb3ee5c854f28933ac86c2feca_aa9e516bb3ee5c854f28933ac86c2feca}{Location :: unpack}}(\mbox{\hyperlink{class_delim_buffer}{DelimBuffer}} \&buffer)}
+\DoxyCodeLine{00019 \{}
+\DoxyCodeLine{00020     \textcolor{keywordtype}{bool} result;}
+\DoxyCodeLine{00021     result = buffer.\mbox{\hyperlink{class_delim_buffer_a4250ba9484e8c381d937f99c4007c0f5_a4250ba9484e8c381d937f99c4007c0f5}{unpack}}(\mbox{\hyperlink{class_location_a0bdc3d7ada1edfc864897e1de764e327_a0bdc3d7ada1edfc864897e1de764e327}{zipcode}});}
+\DoxyCodeLine{00022     result = result \&\& buffer.\mbox{\hyperlink{class_delim_buffer_a4250ba9484e8c381d937f99c4007c0f5_a4250ba9484e8c381d937f99c4007c0f5}{unpack}}(\mbox{\hyperlink{class_location_a0ae46c7127ec349e484ed075c91ba258_a0ae46c7127ec349e484ed075c91ba258}{name}});}
+\DoxyCodeLine{00023     result = result \&\& buffer.\mbox{\hyperlink{class_delim_buffer_a4250ba9484e8c381d937f99c4007c0f5_a4250ba9484e8c381d937f99c4007c0f5}{unpack}}(\mbox{\hyperlink{class_location_a0f7dd3da48a974e44faa533bf74b133e_a0f7dd3da48a974e44faa533bf74b133e}{state}});}
+\DoxyCodeLine{00024     result = result \&\& buffer.\mbox{\hyperlink{class_delim_buffer_a4250ba9484e8c381d937f99c4007c0f5_a4250ba9484e8c381d937f99c4007c0f5}{unpack}}(\mbox{\hyperlink{class_location_a648dadbf656ddaff096a36faa271a165_a648dadbf656ddaff096a36faa271a165}{county}});}
+\DoxyCodeLine{00025     \textcolor{keywordtype}{string} lat\_str, long\_str;}
+\DoxyCodeLine{00026     result = result \&\& buffer.\mbox{\hyperlink{class_delim_buffer_a4250ba9484e8c381d937f99c4007c0f5_a4250ba9484e8c381d937f99c4007c0f5}{unpack}}(lat\_str);}
+\DoxyCodeLine{00027     result = result \&\& buffer.\mbox{\hyperlink{class_delim_buffer_a4250ba9484e8c381d937f99c4007c0f5_a4250ba9484e8c381d937f99c4007c0f5}{unpack}}(long\_str);}
+\DoxyCodeLine{00028     stringstream(lat\_str) >> \mbox{\hyperlink{class_location_a194bf3edf130d2a4bf281720e7d01409_a194bf3edf130d2a4bf281720e7d01409}{latitude}};}
+\DoxyCodeLine{00029     stringstream(long\_str) >> \mbox{\hyperlink{class_location_ae36169ef2dfcad63e26b492a6a82b990_ae36169ef2dfcad63e26b492a6a82b990}{longitude}};}
+\DoxyCodeLine{00030     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00031 \}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{\Hypertarget{_location_8cpp_source_l00033}\mbox{\hyperlink{class_location_ab95582d956fd99f93e20c58998b9a321_ab95582d956fd99f93e20c58998b9a321}{00033}} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_location_ab95582d956fd99f93e20c58998b9a321_ab95582d956fd99f93e20c58998b9a321}{Location :: getZipCode}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_location_a0bdc3d7ada1edfc864897e1de764e327_a0bdc3d7ada1edfc864897e1de764e327}{zipcode}}; \} \textcolor{comment}{// @return Fetches zipcode value}}
+\DoxyCodeLine{\Hypertarget{_location_8cpp_source_l00034}\mbox{\hyperlink{class_location_a45520570450de05653906e638f876643_a45520570450de05653906e638f876643}{00034}} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_location_a45520570450de05653906e638f876643_a45520570450de05653906e638f876643}{Location :: getName}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_location_a0ae46c7127ec349e484ed075c91ba258_a0ae46c7127ec349e484ed075c91ba258}{name}}; \} \textcolor{comment}{// @return Fetches Name value }}
+\DoxyCodeLine{\Hypertarget{_location_8cpp_source_l00035}\mbox{\hyperlink{class_location_a3352c9e3cfcf66aa6a21bcd322763eb3_a3352c9e3cfcf66aa6a21bcd322763eb3}{00035}} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_location_a3352c9e3cfcf66aa6a21bcd322763eb3_a3352c9e3cfcf66aa6a21bcd322763eb3}{Location :: getCounty}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_location_a648dadbf656ddaff096a36faa271a165_a648dadbf656ddaff096a36faa271a165}{county}}; \} \textcolor{comment}{// @return Fetches County value}}
+\DoxyCodeLine{\Hypertarget{_location_8cpp_source_l00036}\mbox{\hyperlink{class_location_aeb52279f65f21178b8b0f0451dbfe2ea_aeb52279f65f21178b8b0f0451dbfe2ea}{00036}} \textcolor{keywordtype}{string} \mbox{\hyperlink{class_location_aeb52279f65f21178b8b0f0451dbfe2ea_aeb52279f65f21178b8b0f0451dbfe2ea}{Location :: getState}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_location_a0f7dd3da48a974e44faa533bf74b133e_a0f7dd3da48a974e44faa533bf74b133e}{state}}; \} \textcolor{comment}{// @return Fetches State value}}
+\DoxyCodeLine{\Hypertarget{_location_8cpp_source_l00037}\mbox{\hyperlink{class_location_a2357f61ad1c19b88ee241a1ea48c85a6_a2357f61ad1c19b88ee241a1ea48c85a6}{00037}} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_location_a2357f61ad1c19b88ee241a1ea48c85a6_a2357f61ad1c19b88ee241a1ea48c85a6}{Location :: getLat}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_location_a194bf3edf130d2a4bf281720e7d01409_a194bf3edf130d2a4bf281720e7d01409}{latitude}}; \} \textcolor{comment}{// @return Fetches Latitude value}}
+\DoxyCodeLine{\Hypertarget{_location_8cpp_source_l00038}\mbox{\hyperlink{class_location_a8e6418006bc0f160ce8e1e2c39b06b53_a8e6418006bc0f160ce8e1e2c39b06b53}{00038}} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_location_a8e6418006bc0f160ce8e1e2c39b06b53_a8e6418006bc0f160ce8e1e2c39b06b53}{Location :: getLong}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_location_ae36169ef2dfcad63e26b492a6a82b990_ae36169ef2dfcad63e26b492a6a82b990}{longitude}}; \} \textcolor{comment}{// @return Fetches longitude value}}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{\Hypertarget{_location_8cpp_source_l00042}\mbox{\hyperlink{class_location_a105f3da5d911187bd5f4364c90d1127f_a105f3da5d911187bd5f4364c90d1127f}{00042}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_location_a105f3da5d911187bd5f4364c90d1127f_a105f3da5d911187bd5f4364c90d1127f}{Location :: setZipCode}}(\textcolor{keywordtype}{string} val) \{ \mbox{\hyperlink{class_location_a0bdc3d7ada1edfc864897e1de764e327_a0bdc3d7ada1edfc864897e1de764e327}{zipcode}} = val; \}}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{\Hypertarget{_location_8cpp_source_l00046}\mbox{\hyperlink{class_location_ae5438155d47b6a738286a4d9cf93e796_ae5438155d47b6a738286a4d9cf93e796}{00046}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_location_ae5438155d47b6a738286a4d9cf93e796_ae5438155d47b6a738286a4d9cf93e796}{Location :: setName}}(\textcolor{keywordtype}{string} val) \{ \mbox{\hyperlink{class_location_a0ae46c7127ec349e484ed075c91ba258_a0ae46c7127ec349e484ed075c91ba258}{name}} = val; \}}
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{\Hypertarget{_location_8cpp_source_l00050}\mbox{\hyperlink{class_location_afb8d42f51debe06a9375878a661b34a0_afb8d42f51debe06a9375878a661b34a0}{00050}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_location_afb8d42f51debe06a9375878a661b34a0_afb8d42f51debe06a9375878a661b34a0}{Location :: setCounty}}(\textcolor{keywordtype}{string} val) \{ \mbox{\hyperlink{class_location_a648dadbf656ddaff096a36faa271a165_a648dadbf656ddaff096a36faa271a165}{county}} = val; \}}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{\Hypertarget{_location_8cpp_source_l00054}\mbox{\hyperlink{class_location_a5f853b7be2f6f37ea964dcc6c5112fa3_a5f853b7be2f6f37ea964dcc6c5112fa3}{00054}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_location_a5f853b7be2f6f37ea964dcc6c5112fa3_a5f853b7be2f6f37ea964dcc6c5112fa3}{Location :: setState}}(\textcolor{keywordtype}{string} val) \{ \mbox{\hyperlink{class_location_a0f7dd3da48a974e44faa533bf74b133e_a0f7dd3da48a974e44faa533bf74b133e}{state}} = val; \}}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{\Hypertarget{_location_8cpp_source_l00058}\mbox{\hyperlink{class_location_a29aa2e66161662c219a1fc02553bdb09_a29aa2e66161662c219a1fc02553bdb09}{00058}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_location_a29aa2e66161662c219a1fc02553bdb09_a29aa2e66161662c219a1fc02553bdb09}{Location :: setLat}}(\textcolor{keywordtype}{float} val) \{ \mbox{\hyperlink{class_location_a194bf3edf130d2a4bf281720e7d01409_a194bf3edf130d2a4bf281720e7d01409}{latitude}} = val; \}}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{\Hypertarget{_location_8cpp_source_l00062}\mbox{\hyperlink{class_location_a4268b0b5a8c03f9bf37d42de986a0d4b_a4268b0b5a8c03f9bf37d42de986a0d4b}{00062}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_location_a4268b0b5a8c03f9bf37d42de986a0d4b_a4268b0b5a8c03f9bf37d42de986a0d4b}{Location :: setLong}}(\textcolor{keywordtype}{float} val) \{ \mbox{\hyperlink{class_location_ae36169ef2dfcad63e26b492a6a82b990_ae36169ef2dfcad63e26b492a6a82b990}{longitude}} = val; \}}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{\Hypertarget{_location_8cpp_source_l00067}\mbox{\hyperlink{class_location_a2f8106c5a8b0ba583b8cb7565fc8da20_a2f8106c5a8b0ba583b8cb7565fc8da20}{00067}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_location_a2f8106c5a8b0ba583b8cb7565fc8da20_a2f8106c5a8b0ba583b8cb7565fc8da20}{Location :: operator= }}(\textcolor{keyword}{const} \mbox{\hyperlink{class_location}{Location}} \&loc)}
+\DoxyCodeLine{00068 \{}
+\DoxyCodeLine{00069     \mbox{\hyperlink{class_location_a105f3da5d911187bd5f4364c90d1127f_a105f3da5d911187bd5f4364c90d1127f}{setZipCode}}(loc.\mbox{\hyperlink{class_location_ab95582d956fd99f93e20c58998b9a321_ab95582d956fd99f93e20c58998b9a321}{getZipCode}}());}
+\DoxyCodeLine{00070     \mbox{\hyperlink{class_location_ae5438155d47b6a738286a4d9cf93e796_ae5438155d47b6a738286a4d9cf93e796}{setName}}(loc.\mbox{\hyperlink{class_location_a45520570450de05653906e638f876643_a45520570450de05653906e638f876643}{getName}}());}
+\DoxyCodeLine{00071     \mbox{\hyperlink{class_location_a5f853b7be2f6f37ea964dcc6c5112fa3_a5f853b7be2f6f37ea964dcc6c5112fa3}{setState}}(loc.\mbox{\hyperlink{class_location_aeb52279f65f21178b8b0f0451dbfe2ea_aeb52279f65f21178b8b0f0451dbfe2ea}{getState}}());}
+\DoxyCodeLine{00072     \mbox{\hyperlink{class_location_afb8d42f51debe06a9375878a661b34a0_afb8d42f51debe06a9375878a661b34a0}{setCounty}}(loc.\mbox{\hyperlink{class_location_a3352c9e3cfcf66aa6a21bcd322763eb3_a3352c9e3cfcf66aa6a21bcd322763eb3}{getCounty}}());}
+\DoxyCodeLine{00073     \mbox{\hyperlink{class_location_a29aa2e66161662c219a1fc02553bdb09_a29aa2e66161662c219a1fc02553bdb09}{setLat}}(loc.\mbox{\hyperlink{class_location_a2357f61ad1c19b88ee241a1ea48c85a6_a2357f61ad1c19b88ee241a1ea48c85a6}{getLat}}());}
+\DoxyCodeLine{00074     \mbox{\hyperlink{class_location_a4268b0b5a8c03f9bf37d42de986a0d4b_a4268b0b5a8c03f9bf37d42de986a0d4b}{setLong}}(loc.\mbox{\hyperlink{class_location_a8e6418006bc0f160ce8e1e2c39b06b53_a8e6418006bc0f160ce8e1e2c39b06b53}{getLong}}());}
+\DoxyCodeLine{00075 \}}
+\DoxyCodeLine{00076 }
+\DoxyCodeLine{\Hypertarget{_location_8cpp_source_l00081}\mbox{\hyperlink{class_location_a26bca297e30ebfa7e6b08bb663c85ec8_a26bca297e30ebfa7e6b08bb663c85ec8}{00081}} ostream\& \mbox{\hyperlink{_location_8cpp_a26bca297e30ebfa7e6b08bb663c85ec8_a26bca297e30ebfa7e6b08bb663c85ec8}{operator<< }}(ostream\& out, \textcolor{keyword}{const} \mbox{\hyperlink{class_location}{Location}} \&loc)}
+\DoxyCodeLine{00082 \{}
+\DoxyCodeLine{00083     out << loc.\mbox{\hyperlink{class_location_ab95582d956fd99f93e20c58998b9a321_ab95582d956fd99f93e20c58998b9a321}{getZipCode}}() << \textcolor{charliteral}{' '} }
+\DoxyCodeLine{00084         << loc.\mbox{\hyperlink{class_location_a45520570450de05653906e638f876643_a45520570450de05653906e638f876643}{getName}}() << \textcolor{charliteral}{' '} }
+\DoxyCodeLine{00085         << loc.\mbox{\hyperlink{class_location_aeb52279f65f21178b8b0f0451dbfe2ea_aeb52279f65f21178b8b0f0451dbfe2ea}{getState}}() << \textcolor{charliteral}{' '}}
+\DoxyCodeLine{00086         << loc.\mbox{\hyperlink{class_location_a3352c9e3cfcf66aa6a21bcd322763eb3_a3352c9e3cfcf66aa6a21bcd322763eb3}{getCounty}}() << \textcolor{charliteral}{' '}}
+\DoxyCodeLine{00087         << loc.\mbox{\hyperlink{class_location_a2357f61ad1c19b88ee241a1ea48c85a6_a2357f61ad1c19b88ee241a1ea48c85a6}{getLat}}() << \textcolor{charliteral}{' '}}
+\DoxyCodeLine{00088         << loc.\mbox{\hyperlink{class_location_a8e6418006bc0f160ce8e1e2c39b06b53_a8e6418006bc0f160ce8e1e2c39b06b53}{getLong}}() << \textcolor{charliteral}{' '};}
+\DoxyCodeLine{00089     \textcolor{keywordflow}{return} out;}
+\DoxyCodeLine{00090 \}}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{\Hypertarget{_location_8cpp_source_l00095}\mbox{\hyperlink{class_location_abbe2afa87e60e161a38a154e2b388b8d_abbe2afa87e60e161a38a154e2b388b8d}{00095}} \textcolor{keywordtype}{bool}  \mbox{\hyperlink{class_location_abbe2afa87e60e161a38a154e2b388b8d_abbe2afa87e60e161a38a154e2b388b8d}{Location :: operator< }}(\textcolor{keyword}{const} \mbox{\hyperlink{class_location}{Location}} \&loc)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00096 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00097     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_location_aeb52279f65f21178b8b0f0451dbfe2ea_aeb52279f65f21178b8b0f0451dbfe2ea}{getState}}() < loc.\mbox{\hyperlink{class_location_aeb52279f65f21178b8b0f0451dbfe2ea_aeb52279f65f21178b8b0f0451dbfe2ea}{getState}}();}
+\DoxyCodeLine{00098 \}}
+\DoxyCodeLine{00099 }
+\DoxyCodeLine{\Hypertarget{_location_8cpp_source_l00103}\mbox{\hyperlink{class_location_a6ba8a3caf647c128b9a881eea18e4e80_a6ba8a3caf647c128b9a881eea18e4e80}{00103}} \textcolor{keywordtype}{bool}  \mbox{\hyperlink{class_location_a6ba8a3caf647c128b9a881eea18e4e80_a6ba8a3caf647c128b9a881eea18e4e80}{Location :: operator> }}(\textcolor{keyword}{const} \mbox{\hyperlink{class_location}{Location}} \&loc)\textcolor{keyword}{ const}}
+\DoxyCodeLine{00104 \textcolor{keyword}{}\{}
+\DoxyCodeLine{00105     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_location_aeb52279f65f21178b8b0f0451dbfe2ea_aeb52279f65f21178b8b0f0451dbfe2ea}{getState}}() > loc.\mbox{\hyperlink{class_location_aeb52279f65f21178b8b0f0451dbfe2ea_aeb52279f65f21178b8b0f0451dbfe2ea}{getState}}();}
+\DoxyCodeLine{00106 \}}
+
+\end{DoxyCode}

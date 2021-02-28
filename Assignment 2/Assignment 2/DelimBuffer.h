@@ -1,5 +1,6 @@
 ///******************************************************************
-/// @author Authors: Ben Olson,Gia Dat Diep
+/// @file DelimBuffer.h
+/// @author Authors: Ben Olson, Gia Dat Diep
 ///					 Moffat Omuya, Sandesh Raj and Abraham Sesay
 /// 
 /// @details This is the buffer class, DelimBuffer.h and .cpp
@@ -29,8 +30,8 @@ class DelimBuffer
 			nextCharIndex = 0;
 		}
 
-		bool read(istream& infile);
-		bool unpack(string& aStr);
+		bool read(istream& infile); // read stream method
+		bool unpack(string& aStr); // unpack the string method
 
 	protected:
 		void clear();
@@ -39,6 +40,6 @@ class DelimBuffer
 		char delim = ' '; ///Delimiter
 		string buffer; /// The buffer
 		int bufferSize = 0; /// Size of the buffer string
-		int nextCharIndex = 0;
+		int nextCharIndex = 0; //index of next char
 };
 #endif

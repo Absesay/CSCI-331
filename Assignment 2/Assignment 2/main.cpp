@@ -1,5 +1,6 @@
 ///*************************************************************
-/// @author Authors: Ben Olson,Gia Dat Diep
+/// @file Main.cpp
+/// @author Authors: Ben Olson, Gia Dat Diep
 ///					 Moffat Omuya, Sandesh Raj and Abraham Sesay
 /// 
 /// @details This is the main program that process the input
@@ -48,8 +49,7 @@ int main()
 		 << '|' << setw(15) << "Southernmost" << '|' << endl;	
 	cout << "+---------------------------------------------------------------------+" << endl;
 	int currentIndex = 0;
-	cout << location[25].getState() << endl;
-	/*while (currentIndex < size)
+	while (currentIndex < size)
 	{
 		string currentState = location[currentIndex].getState();
 		int   w_most = currentIndex,
@@ -73,6 +73,6 @@ int main()
 			 << '|' << setw(15) << location[n_most].getZipCode() 
 			 << '|' << setw(15) << location[s_most].getZipCode()  << '|' << endl;
 	}
-	cout << "+---------------------------------------------------------------------+" << endl;*/
+	cout << "+---------------------------------------------------------------------+" << endl;
 }
 

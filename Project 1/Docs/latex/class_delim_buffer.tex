@@ -1,0 +1,183 @@
+\hypertarget{class_delim_buffer}{}\doxysection{Delim\+Buffer Class Reference}
+\label{class_delim_buffer}\index{DelimBuffer@{DelimBuffer}}
+
+
+{\ttfamily \#include $<$Delim\+Buffer.\+h$>$}
+
+
+
+Collaboration diagram for Delim\+Buffer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{class_delim_buffer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_delim_buffer_a211e81a157888ea0d56ba13da83ac301_a211e81a157888ea0d56ba13da83ac301}{Delim\+Buffer}} (char del=\textquotesingle{},\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Default Constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_delim_buffer_a3a5cb9de6a97526fb72d448437071acc_a3a5cb9de6a97526fb72d448437071acc}{read}} (istream \&infile)
+\begin{DoxyCompactList}\small\item\em method reads from the file stream and tests to see if stream open \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_delim_buffer_a4250ba9484e8c381d937f99c4007c0f5_a4250ba9484e8c381d937f99c4007c0f5}{unpack}} (string \&a\+Str)
+\begin{DoxyCompactList}\small\item\em method \char`\"{}unpacks\char`\"{} the passed string pointer \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_delim_buffer_a63f8b3423891c18afe3d7741d980750e_a63f8b3423891c18afe3d7741d980750e}{clear}} ()
+\begin{DoxyCompactList}\small\item\em clear the buffer \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{class_delim_buffer_a141dc90a0a66aeca099ddbdf83d93fd7_a141dc90a0a66aeca099ddbdf83d93fd7}{delim}} = \textquotesingle{} \textquotesingle{}
+\item 
+string \mbox{\hyperlink{class_delim_buffer_a3af44793c1ea61e1fbb12cf201ab9027_a3af44793c1ea61e1fbb12cf201ab9027}{buffer}}
+\begin{DoxyCompactList}\small\item\em Delimiter. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_delim_buffer_a2d46f86f8f91420aaa5cb02df7ece685_a2d46f86f8f91420aaa5cb02df7ece685}{buffer\+Size}} = 0
+\begin{DoxyCompactList}\small\item\em The buffer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_delim_buffer_aea35233913764f0168394bc879c3015f_aea35233913764f0168394bc879c3015f}{next\+Char\+Index}} = 0
+\begin{DoxyCompactList}\small\item\em Size of the buffer string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_delim_buffer_8h_source_l00021}{21}} of file \mbox{\hyperlink{_delim_buffer_8h_source}{Delim\+Buffer.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_delim_buffer_a211e81a157888ea0d56ba13da83ac301_a211e81a157888ea0d56ba13da83ac301}\label{class_delim_buffer_a211e81a157888ea0d56ba13da83ac301_a211e81a157888ea0d56ba13da83ac301}} 
+\index{DelimBuffer@{DelimBuffer}!DelimBuffer@{DelimBuffer}}
+\index{DelimBuffer@{DelimBuffer}!DelimBuffer@{DelimBuffer}}
+\doxysubsubsection{\texorpdfstring{DelimBuffer()}{DelimBuffer()}}
+{\footnotesize\ttfamily Delim\+Buffer\+::\+Delim\+Buffer (\begin{DoxyParamCaption}\item[{char}]{del = {\ttfamily \textquotesingle{},\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_delim_buffer_8h_source_l00026}{26}} of file \mbox{\hyperlink{_delim_buffer_8h_source}{Delim\+Buffer.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_delim_buffer_a63f8b3423891c18afe3d7741d980750e_a63f8b3423891c18afe3d7741d980750e}\label{class_delim_buffer_a63f8b3423891c18afe3d7741d980750e_a63f8b3423891c18afe3d7741d980750e}} 
+\index{DelimBuffer@{DelimBuffer}!clear@{clear}}
+\index{clear@{clear}!DelimBuffer@{DelimBuffer}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Delim\+Buffer\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em no} & parameters passed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no return values 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_delim_buffer_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{_delim_buffer_8cpp_source}{Delim\+Buffer.\+cpp}}.
+
+\mbox{\Hypertarget{class_delim_buffer_a3a5cb9de6a97526fb72d448437071acc_a3a5cb9de6a97526fb72d448437071acc}\label{class_delim_buffer_a3a5cb9de6a97526fb72d448437071acc_a3a5cb9de6a97526fb72d448437071acc}} 
+\index{DelimBuffer@{DelimBuffer}!read@{read}}
+\index{read@{read}!DelimBuffer@{DelimBuffer}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily bool Delim\+Buffer\+::read (\begin{DoxyParamCaption}\item[{istream \&}]{infile }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em infile} & file stream is passed in \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns a boolean value about whether the stream is open or not 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_delim_buffer_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{_delim_buffer_8cpp_source}{Delim\+Buffer.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{class_delim_buffer_a3a5cb9de6a97526fb72d448437071acc_a3a5cb9de6a97526fb72d448437071acc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_delim_buffer_a4250ba9484e8c381d937f99c4007c0f5_a4250ba9484e8c381d937f99c4007c0f5}\label{class_delim_buffer_a4250ba9484e8c381d937f99c4007c0f5_a4250ba9484e8c381d937f99c4007c0f5}} 
+\index{DelimBuffer@{DelimBuffer}!unpack@{unpack}}
+\index{unpack@{unpack}!DelimBuffer@{DelimBuffer}}
+\doxysubsubsection{\texorpdfstring{unpack()}{unpack()}}
+{\footnotesize\ttfamily bool Delim\+Buffer\+::unpack (\begin{DoxyParamCaption}\item[{string \&}]{a\+Str }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & pointer a\+Str \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a boolean value if the delimeter is in the string or not 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_delim_buffer_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{_delim_buffer_8cpp_source}{Delim\+Buffer.\+cpp}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_delim_buffer_a4250ba9484e8c381d937f99c4007c0f5_a4250ba9484e8c381d937f99c4007c0f5_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_delim_buffer_a3af44793c1ea61e1fbb12cf201ab9027_a3af44793c1ea61e1fbb12cf201ab9027}\label{class_delim_buffer_a3af44793c1ea61e1fbb12cf201ab9027_a3af44793c1ea61e1fbb12cf201ab9027}} 
+\index{DelimBuffer@{DelimBuffer}!buffer@{buffer}}
+\index{buffer@{buffer}!DelimBuffer@{DelimBuffer}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily string Delim\+Buffer\+::buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_delim_buffer_8h_source_l00041}{41}} of file \mbox{\hyperlink{_delim_buffer_8h_source}{Delim\+Buffer.\+h}}.
+
+\mbox{\Hypertarget{class_delim_buffer_a2d46f86f8f91420aaa5cb02df7ece685_a2d46f86f8f91420aaa5cb02df7ece685}\label{class_delim_buffer_a2d46f86f8f91420aaa5cb02df7ece685_a2d46f86f8f91420aaa5cb02df7ece685}} 
+\index{DelimBuffer@{DelimBuffer}!bufferSize@{bufferSize}}
+\index{bufferSize@{bufferSize}!DelimBuffer@{DelimBuffer}}
+\doxysubsubsection{\texorpdfstring{bufferSize}{bufferSize}}
+{\footnotesize\ttfamily int Delim\+Buffer\+::buffer\+Size = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_delim_buffer_8h_source_l00042}{42}} of file \mbox{\hyperlink{_delim_buffer_8h_source}{Delim\+Buffer.\+h}}.
+
+\mbox{\Hypertarget{class_delim_buffer_a141dc90a0a66aeca099ddbdf83d93fd7_a141dc90a0a66aeca099ddbdf83d93fd7}\label{class_delim_buffer_a141dc90a0a66aeca099ddbdf83d93fd7_a141dc90a0a66aeca099ddbdf83d93fd7}} 
+\index{DelimBuffer@{DelimBuffer}!delim@{delim}}
+\index{delim@{delim}!DelimBuffer@{DelimBuffer}}
+\doxysubsubsection{\texorpdfstring{delim}{delim}}
+{\footnotesize\ttfamily char Delim\+Buffer\+::delim = \textquotesingle{} \textquotesingle{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_delim_buffer_8h_source_l00040}{40}} of file \mbox{\hyperlink{_delim_buffer_8h_source}{Delim\+Buffer.\+h}}.
+
+\mbox{\Hypertarget{class_delim_buffer_aea35233913764f0168394bc879c3015f_aea35233913764f0168394bc879c3015f}\label{class_delim_buffer_aea35233913764f0168394bc879c3015f_aea35233913764f0168394bc879c3015f}} 
+\index{DelimBuffer@{DelimBuffer}!nextCharIndex@{nextCharIndex}}
+\index{nextCharIndex@{nextCharIndex}!DelimBuffer@{DelimBuffer}}
+\doxysubsubsection{\texorpdfstring{nextCharIndex}{nextCharIndex}}
+{\footnotesize\ttfamily int Delim\+Buffer\+::next\+Char\+Index = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_delim_buffer_8h_source_l00043}{43}} of file \mbox{\hyperlink{_delim_buffer_8h_source}{Delim\+Buffer.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_delim_buffer_8h}{Delim\+Buffer.\+h}}\item 
+\mbox{\hyperlink{_delim_buffer_8cpp}{Delim\+Buffer.\+cpp}}\end{DoxyCompactItemize}

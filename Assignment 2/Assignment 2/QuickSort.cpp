@@ -1,3 +1,14 @@
+///******************************************************************
+/// @file QuickSort.cpp
+/// @author Authors: Ben Olson, Gia Dat Diep
+///					 Moffat Omuya, Sandesh Raj and Abraham Sesay
+/// 
+/// @details This file has functions to sort a vector
+/// 
+/// 
+///******************************************************************
+
+
 
 #include <iostream>
 #include <vector>

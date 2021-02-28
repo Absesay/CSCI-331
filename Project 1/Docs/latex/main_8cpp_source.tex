@@ -1,0 +1,74 @@
+\hypertarget{main_8cpp_source}{}\doxysection{main.\+cpp}
+\label{main_8cpp_source}\index{main.cpp@{main.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 }
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_location_8h}{Location.h}}"{}}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_delim_buffer_8h}{DelimBuffer.h}}"{}}}
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00017 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{00018 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_quick_sort_8cpp}{QuickSort.cpp}}"{}}}
+\DoxyCodeLine{00019 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}\mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_ae66f6b31b5ad750f1fe042a706a4e3d4}{00024}} \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{00025 \{}
+\DoxyCodeLine{00026     vector<Location> location;}
+\DoxyCodeLine{00027     fstream infile;}
+\DoxyCodeLine{00028     infile.open(\textcolor{stringliteral}{"{}us\_postal\_codes.csv"{}});}
+\DoxyCodeLine{00029     \mbox{\hyperlink{class_delim_buffer}{DelimBuffer}} buffer;}
+\DoxyCodeLine{00030     \textcolor{keywordflow}{if} (!buffer.\mbox{\hyperlink{class_delim_buffer_a3a5cb9de6a97526fb72d448437071acc_a3a5cb9de6a97526fb72d448437071acc}{read}}(infile)) \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00031     \textcolor{keywordtype}{string} field[6];}
+\DoxyCodeLine{00032     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 6; i++) \{ buffer.\mbox{\hyperlink{class_delim_buffer_a4250ba9484e8c381d937f99c4007c0f5_a4250ba9484e8c381d937f99c4007c0f5}{unpack}}(field[i]); \} }
+\DoxyCodeLine{00033     }
+\DoxyCodeLine{00034     \textcolor{keywordflow}{while} (1)}
+\DoxyCodeLine{00035     \{}
+\DoxyCodeLine{00036         \mbox{\hyperlink{class_location}{Location}} temp;}
+\DoxyCodeLine{00037         \textcolor{keywordflow}{if} (!temp.\mbox{\hyperlink{class_location_aa9e516bb3ee5c854f28933ac86c2feca_aa9e516bb3ee5c854f28933ac86c2feca}{unpack}}(buffer)) \{\textcolor{keywordflow}{break};\}}
+\DoxyCodeLine{00038         location.push\_back(temp);}
+\DoxyCodeLine{00039     \}}
+\DoxyCodeLine{00040     }
+\DoxyCodeLine{00041     \textcolor{keywordtype}{int} size = location.size();}
+\DoxyCodeLine{00042     \mbox{\hyperlink{_quick_sort_8cpp_ab4e5bb2d74d770195ef6f01f681c5b6f_ab4e5bb2d74d770195ef6f01f681c5b6f}{qSort}}(location, 0, size -\/ 1);}
+\DoxyCodeLine{00043     }
+\DoxyCodeLine{00044     cout << \textcolor{stringliteral}{"{}+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+"{}} << endl;}
+\DoxyCodeLine{00045     cout << \textcolor{charliteral}{'|'} << setw(5) << \textcolor{stringliteral}{"{}State"{}}}
+\DoxyCodeLine{00046          << \textcolor{charliteral}{'|'} << setw(15) << \textcolor{stringliteral}{"{}Westernmost"{}}}
+\DoxyCodeLine{00047          << \textcolor{charliteral}{'|'} << setw(15) << \textcolor{stringliteral}{"{}Easternmost"{}}}
+\DoxyCodeLine{00048          << \textcolor{charliteral}{'|'} << setw(15) << \textcolor{stringliteral}{"{}Northernmost"{}}}
+\DoxyCodeLine{00049          << \textcolor{charliteral}{'|'} << setw(15) << \textcolor{stringliteral}{"{}Southernmost"{}} << \textcolor{charliteral}{'|'} << endl;   }
+\DoxyCodeLine{00050     cout << \textcolor{stringliteral}{"{}+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+"{}} << endl;}
+\DoxyCodeLine{00051     \textcolor{keywordtype}{int} currentIndex = 0;}
+\DoxyCodeLine{00052     \textcolor{keywordflow}{while} (currentIndex < size)}
+\DoxyCodeLine{00053     \{}
+\DoxyCodeLine{00054         \textcolor{keywordtype}{string} currentState = location[currentIndex].getState();}
+\DoxyCodeLine{00055         \textcolor{keywordtype}{int}   w\_most = currentIndex,}
+\DoxyCodeLine{00056               e\_most = currentIndex,}
+\DoxyCodeLine{00057               s\_most = currentIndex,}
+\DoxyCodeLine{00058               n\_most = currentIndex;}
+\DoxyCodeLine{00059         }
+\DoxyCodeLine{00060         currentIndex++;}
+\DoxyCodeLine{00061         \textcolor{keywordflow}{while} (currentState == location[currentIndex].getState())}
+\DoxyCodeLine{00062         \{}
+\DoxyCodeLine{00063             \textcolor{keywordflow}{if} (location[currentIndex].getLong() > location[w\_most].getLong()) w\_most = currentIndex;}
+\DoxyCodeLine{00064             \textcolor{keywordflow}{if} (location[currentIndex].getLong() < location[e\_most].getLong()) e\_most = currentIndex;}
+\DoxyCodeLine{00065             \textcolor{keywordflow}{if} (location[currentIndex].getLat() > location[n\_most].getLat())   n\_most = currentIndex;}
+\DoxyCodeLine{00066             \textcolor{keywordflow}{if} (location[currentIndex].getLat() < location[s\_most].getLat())   s\_most = currentIndex;}
+\DoxyCodeLine{00067             currentIndex++;}
+\DoxyCodeLine{00068             \textcolor{keywordflow}{if} (currentIndex == size) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00069         \}}
+\DoxyCodeLine{00070         cout << \textcolor{charliteral}{'|'} << setw(5) << location[currentIndex -\/ 1].getState() }
+\DoxyCodeLine{00071              << \textcolor{charliteral}{'|'} << setw(15) << location[w\_most].getZipCode() }
+\DoxyCodeLine{00072              << \textcolor{charliteral}{'|'} << setw(15) << location[e\_most].getZipCode() }
+\DoxyCodeLine{00073              << \textcolor{charliteral}{'|'} << setw(15) << location[n\_most].getZipCode() }
+\DoxyCodeLine{00074              << \textcolor{charliteral}{'|'} << setw(15) << location[s\_most].getZipCode()  << \textcolor{charliteral}{'|'} << endl;}
+\DoxyCodeLine{00075     \}}
+\DoxyCodeLine{00076     cout << \textcolor{stringliteral}{"{}+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/+"{}} << endl;}
+\DoxyCodeLine{00077 \}}
+\DoxyCodeLine{00078 }
+
+\end{DoxyCode}

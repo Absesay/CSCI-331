@@ -1,0 +1,31 @@
+\hypertarget{_buffer_8h_source}{}\doxysection{Buffer.\+h}
+\label{_buffer_8h_source}\index{Buffer.h@{Buffer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00002 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{00003 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{00004 }
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{keyword}{using namespace }std; }
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{\Hypertarget{_buffer_8h_source_l00008}\mbox{\hyperlink{class_delim_text_buffer}{00008}} \textcolor{keyword}{class }\mbox{\hyperlink{class_delim_text_buffer}{DelimTextBuffer}}}
+\DoxyCodeLine{00009 \{}
+\DoxyCodeLine{00010 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_buffer_8h_source_l00011}\mbox{\hyperlink{class_delim_text_buffer_a2a828e509c77bb72cedd5d7c176cc04f_a2a828e509c77bb72cedd5d7c176cc04f}{00011}}     \mbox{\hyperlink{class_delim_text_buffer_a2a828e509c77bb72cedd5d7c176cc04f_a2a828e509c77bb72cedd5d7c176cc04f}{DelimTextBuffer}}(\textcolor{keywordtype}{char} Delim = \textcolor{charliteral}{','}, \textcolor{keywordtype}{int} maxBytes = 1000);}
+\DoxyCodeLine{00012     \textcolor{keywordtype}{int} Read (istream \& infile);}
+\DoxyCodeLine{00013     \textcolor{comment}{//int Write(ostream \& file);}}
+\DoxyCodeLine{00014     \textcolor{comment}{//int Pack (const char * str, int size = -\/1);}}
+\DoxyCodeLine{00015     \textcolor{comment}{//int Unpack (char * str);}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017 \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{\Hypertarget{_buffer_8h_source_l00019}\mbox{\hyperlink{class_delim_text_buffer_a7da7c87019725e7e83c239ea70ef3291_a7da7c87019725e7e83c239ea70ef3291}{00019}}     \textcolor{keywordtype}{char} \mbox{\hyperlink{class_delim_text_buffer_a7da7c87019725e7e83c239ea70ef3291_a7da7c87019725e7e83c239ea70ef3291}{Delim}}; \textcolor{comment}{// delimiter}}
+\DoxyCodeLine{\Hypertarget{_buffer_8h_source_l00020}\mbox{\hyperlink{class_delim_text_buffer_a7220844bd0855645879719fe8bfc6682_a7220844bd0855645879719fe8bfc6682}{00020}}     \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_delim_text_buffer_a7220844bd0855645879719fe8bfc6682_a7220844bd0855645879719fe8bfc6682}{Buffer}}; \textcolor{comment}{// Array to hold information piece in}}
+\DoxyCodeLine{\Hypertarget{_buffer_8h_source_l00021}\mbox{\hyperlink{class_delim_text_buffer_a3c1c3e243eb13f62c017155c360fd2d0_a3c1c3e243eb13f62c017155c360fd2d0}{00021}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_delim_text_buffer_a3c1c3e243eb13f62c017155c360fd2d0_a3c1c3e243eb13f62c017155c360fd2d0}{Buffersize}}; \textcolor{comment}{// size of field}}
+\DoxyCodeLine{\Hypertarget{_buffer_8h_source_l00022}\mbox{\hyperlink{class_delim_text_buffer_aae8d30712833b615d3295ba3df336d9f_aae8d30712833b615d3295ba3df336d9f}{00022}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_delim_text_buffer_aae8d30712833b615d3295ba3df336d9f_aae8d30712833b615d3295ba3df336d9f}{MaxBytes}}; \textcolor{comment}{// Max number of chars in the buffer}}
+\DoxyCodeLine{\Hypertarget{_buffer_8h_source_l00023}\mbox{\hyperlink{class_delim_text_buffer_ad9c5fb63571ea65334b0c513e3a272d8_ad9c5fb63571ea65334b0c513e3a272d8}{00023}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_delim_text_buffer_ad9c5fb63571ea65334b0c513e3a272d8_ad9c5fb63571ea65334b0c513e3a272d8}{NextByte}}; \textcolor{comment}{// packing/unpacking position in buffer}}
+\DoxyCodeLine{00024 \};}
+\DoxyCodeLine{00025     }
+
+\end{DoxyCode}

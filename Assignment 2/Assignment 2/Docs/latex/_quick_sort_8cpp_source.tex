@@ -1,0 +1,145 @@
+\hypertarget{_quick_sort_8cpp_source}{}\doxysection{Quick\+Sort.\+cpp}
+\label{_quick_sort_8cpp_source}\index{QuickSort.cpp@{QuickSort.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 }
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{00014 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_location_8h}{Location.h}}"{}}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{\Hypertarget{_quick_sort_8cpp_source_l00020}\mbox{\hyperlink{_quick_sort_8cpp_a98c3278fc5c8b8359743f1729bd659e8_a98c3278fc5c8b8359743f1729bd659e8}{00020}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_quick_sort_8cpp_a98c3278fc5c8b8359743f1729bd659e8_a98c3278fc5c8b8359743f1729bd659e8}{swap\_loc}}(vector<T> \&aVector, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&i, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&j)}
+\DoxyCodeLine{00021 \{}
+\DoxyCodeLine{00022     T temp = aVector[i];}
+\DoxyCodeLine{00023     aVector[i] = aVector[j];}
+\DoxyCodeLine{00024     aVector[j] = temp;}
+\DoxyCodeLine{00025 \}}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{\Hypertarget{_quick_sort_8cpp_source_l00028}\mbox{\hyperlink{_quick_sort_8cpp_a5f26eba1961f7d6656f2b70c9d8a25b6_a5f26eba1961f7d6656f2b70c9d8a25b6}{00028}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_quick_sort_8cpp_a5f26eba1961f7d6656f2b70c9d8a25b6_a5f26eba1961f7d6656f2b70c9d8a25b6}{insertSort}} (vector<T> \&anArray, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&first, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&last)}
+\DoxyCodeLine{00029 \{}
+\DoxyCodeLine{00030     \textcolor{comment}{// unsorted = first index of the unsorted region}}
+\DoxyCodeLine{00031     \textcolor{comment}{// loc = last index the sorted region + 1}}
+\DoxyCodeLine{00032     \textcolor{comment}{// nextItem = next item in the sorted region (the current item that is being placed to the sorted region)}}
+\DoxyCodeLine{00033     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} unsorted = first + 1; unsorted <= last; unsorted++)}
+\DoxyCodeLine{00034     \{}
+\DoxyCodeLine{00035         \textcolor{comment}{// sorted region is anArray[0..unsorted-\/1]}}
+\DoxyCodeLine{00036         }
+\DoxyCodeLine{00037         \textcolor{comment}{// get the next item}}
+\DoxyCodeLine{00038         T nextItem = anArray[unsorted]; }
+\DoxyCodeLine{00039         \textcolor{comment}{// get the right most index of sorted region + 1 (increase size by 1)}}
+\DoxyCodeLine{00040         \textcolor{keywordtype}{int} loc = unsorted;}
+\DoxyCodeLine{00041         }
+\DoxyCodeLine{00042         \textcolor{comment}{// shift right to make room for the nextItem}}
+\DoxyCodeLine{00043         \textcolor{keywordflow}{while} ((loc > 0) \&\& anArray[loc -\/ 1] > nextItem)}
+\DoxyCodeLine{00044         \{}
+\DoxyCodeLine{00045             anArray[loc] = anArray[loc -\/ 1];}
+\DoxyCodeLine{00046             loc-\/-\/;}
+\DoxyCodeLine{00047         \}}
+\DoxyCodeLine{00048         }
+\DoxyCodeLine{00049         \textcolor{comment}{// place the next item to the correct position}}
+\DoxyCodeLine{00050         anArray[loc] = nextItem;}
+\DoxyCodeLine{00051     \}}
+\DoxyCodeLine{00052 \}}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054 \textcolor{comment}{/* This function sort 3 first, mid, last entries in increasing order}}
+\DoxyCodeLine{00055 \textcolor{comment}{    @pre: first <= mid <= last.}}
+\DoxyCodeLine{00056 \textcolor{comment}{    @post: first, mid, last entries are sorted in increasing order}}
+\DoxyCodeLine{00057 \textcolor{comment}{    @param: anArray -\/ a given array}}
+\DoxyCodeLine{00058 \textcolor{comment}{            first: first index of the first half}}
+\DoxyCodeLine{00059 \textcolor{comment}{            mid: last index of the first half}}
+\DoxyCodeLine{00060 \textcolor{comment}{            last: last index of the second half */}}
+\DoxyCodeLine{00061 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{\Hypertarget{_quick_sort_8cpp_source_l00062}\mbox{\hyperlink{_quick_sort_8cpp_a44103472ce6b8042226a63f699db54cc_a44103472ce6b8042226a63f699db54cc}{00062}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_quick_sort_8cpp_a44103472ce6b8042226a63f699db54cc_a44103472ce6b8042226a63f699db54cc}{sortFirstMidLast}} (vector<T> \&anArray, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&first, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&mid, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&last)}
+\DoxyCodeLine{00063 \{}
+\DoxyCodeLine{00064     \textcolor{keywordflow}{if} (anArray[first] > anArray[mid])}
+\DoxyCodeLine{00065     \{ \mbox{\hyperlink{_quick_sort_8cpp_a98c3278fc5c8b8359743f1729bd659e8_a98c3278fc5c8b8359743f1729bd659e8}{swap\_loc}}(anArray, first, mid); \}}
+\DoxyCodeLine{00066     }
+\DoxyCodeLine{00067     \textcolor{keywordflow}{if} (anArray[mid] > anArray[last])}
+\DoxyCodeLine{00068     \{ \mbox{\hyperlink{_quick_sort_8cpp_a98c3278fc5c8b8359743f1729bd659e8_a98c3278fc5c8b8359743f1729bd659e8}{swap\_loc}}(anArray, mid, last); \}}
+\DoxyCodeLine{00069     }
+\DoxyCodeLine{00070     \textcolor{keywordflow}{if} (anArray[first] > anArray[mid])}
+\DoxyCodeLine{00071     \{ \mbox{\hyperlink{_quick_sort_8cpp_a98c3278fc5c8b8359743f1729bd659e8_a98c3278fc5c8b8359743f1729bd659e8}{swap\_loc}}(anArray, first, mid); \}}
+\DoxyCodeLine{00072 \}}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{\Hypertarget{_quick_sort_8cpp_source_l00075}\mbox{\hyperlink{_quick_sort_8cpp_a1423b1c2df70e77046643559410c6f25_a1423b1c2df70e77046643559410c6f25}{00075}} \textcolor{keywordtype}{int} \mbox{\hyperlink{_quick_sort_8cpp_a1423b1c2df70e77046643559410c6f25_a1423b1c2df70e77046643559410c6f25}{partition}} (vector<T> \&anArray, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&first, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&last)}
+\DoxyCodeLine{00076 \{}
+\DoxyCodeLine{00077     \textcolor{comment}{// get the middle index}}
+\DoxyCodeLine{00078     \textcolor{keywordtype}{int} mid = first + (last -\/ first)/2;}
+\DoxyCodeLine{00079     \textcolor{comment}{// sort first, mid, last}}
+\DoxyCodeLine{00080     \mbox{\hyperlink{_quick_sort_8cpp_a44103472ce6b8042226a63f699db54cc_a44103472ce6b8042226a63f699db54cc}{sortFirstMidLast}}(anArray, first, mid, last);}
+\DoxyCodeLine{00081     }
+\DoxyCodeLine{00082     \textcolor{comment}{// swap the middle index with the last -\/ 1}}
+\DoxyCodeLine{00083     \mbox{\hyperlink{_quick_sort_8cpp_a98c3278fc5c8b8359743f1729bd659e8_a98c3278fc5c8b8359743f1729bd659e8}{swap\_loc}}(anArray, mid, last -\/ 1);}
+\DoxyCodeLine{00084     }
+\DoxyCodeLine{00085     \textcolor{comment}{// make that pivot}}
+\DoxyCodeLine{00086     \textcolor{keywordtype}{int} pivotIndex = last -\/ 1;}
+\DoxyCodeLine{00087     T pivot = anArray[pivotIndex];}
+\DoxyCodeLine{00088     }
+\DoxyCodeLine{00089     \textcolor{comment}{// start checking from left and right}}
+\DoxyCodeLine{00090     \textcolor{keywordtype}{int} indLeft = first + 1;}
+\DoxyCodeLine{00091     \textcolor{keywordtype}{int} indRight = last -\/ 2;}
+\DoxyCodeLine{00092     \textcolor{keywordtype}{bool} done = \textcolor{keyword}{false};}
+\DoxyCodeLine{00093     \textcolor{keywordflow}{while} (!done)}
+\DoxyCodeLine{00094     \{   }
+\DoxyCodeLine{00095         \textcolor{comment}{// look for the larger than pivot in the left}}
+\DoxyCodeLine{00096         \textcolor{keywordflow}{while} (anArray[indLeft] < pivot)}
+\DoxyCodeLine{00097         \{}
+\DoxyCodeLine{00098             indLeft++;}
+\DoxyCodeLine{00099         \}}
+\DoxyCodeLine{00100         }
+\DoxyCodeLine{00101         \textcolor{comment}{// look for smaller than pivot in the right}}
+\DoxyCodeLine{00102         \textcolor{keywordflow}{while} (anArray[indRight] > pivot)}
+\DoxyCodeLine{00103         \{}
+\DoxyCodeLine{00104             indRight-\/-\/;}
+\DoxyCodeLine{00105         \}}
+\DoxyCodeLine{00106         }
+\DoxyCodeLine{00107         \textcolor{comment}{// swap them if they are in the wrong side}}
+\DoxyCodeLine{00108         \textcolor{keywordflow}{if} (indLeft < indRight)}
+\DoxyCodeLine{00109         \{}
+\DoxyCodeLine{00110             \mbox{\hyperlink{_quick_sort_8cpp_a98c3278fc5c8b8359743f1729bd659e8_a98c3278fc5c8b8359743f1729bd659e8}{swap\_loc}}(anArray, indLeft, indRight);}
+\DoxyCodeLine{00111             indLeft++;}
+\DoxyCodeLine{00112             indRight-\/-\/;}
+\DoxyCodeLine{00113         \}}
+\DoxyCodeLine{00114         }
+\DoxyCodeLine{00115         \textcolor{comment}{// done with the current pivot}}
+\DoxyCodeLine{00116         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00117         \{}
+\DoxyCodeLine{00118             done = \textcolor{keyword}{true};}
+\DoxyCodeLine{00119         \}}
+\DoxyCodeLine{00120     \}}
+\DoxyCodeLine{00121     }
+\DoxyCodeLine{00122     \textcolor{comment}{// swap again to place the pivot to the correct position}}
+\DoxyCodeLine{00123     \mbox{\hyperlink{_quick_sort_8cpp_a98c3278fc5c8b8359743f1729bd659e8_a98c3278fc5c8b8359743f1729bd659e8}{swap\_loc}}(anArray, pivotIndex, indLeft);}
+\DoxyCodeLine{00124 }
+\DoxyCodeLine{00125     \textcolor{keywordflow}{return} indLeft;}
+\DoxyCodeLine{00126 \}}
+\DoxyCodeLine{00127 }
+\DoxyCodeLine{\Hypertarget{_quick_sort_8cpp_source_l00128}\mbox{\hyperlink{_quick_sort_8cpp_ab4e5bb2d74d770195ef6f01f681c5b6f_ab4e5bb2d74d770195ef6f01f681c5b6f}{00128}} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} \mbox{\hyperlink{_quick_sort_8cpp_ab4e5bb2d74d770195ef6f01f681c5b6f_ab4e5bb2d74d770195ef6f01f681c5b6f}{qSort}}(vector<Location> \&anArray, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&first, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&last)}
+\DoxyCodeLine{00129 \{}
+\DoxyCodeLine{00130     \textcolor{keywordflow}{if} (last -\/ first > 0)}
+\DoxyCodeLine{00131     \{}
+\DoxyCodeLine{00132         \textcolor{comment}{// if the array size is less than 4, use insert sort}}
+\DoxyCodeLine{00133         \textcolor{keywordflow}{if} ((last -\/ first + 1) < 4)}
+\DoxyCodeLine{00134         \{}
+\DoxyCodeLine{00135             \mbox{\hyperlink{_quick_sort_8cpp_a5f26eba1961f7d6656f2b70c9d8a25b6_a5f26eba1961f7d6656f2b70c9d8a25b6}{insertSort}}(anArray, first, last);}
+\DoxyCodeLine{00136         \}}
+\DoxyCodeLine{00137         \textcolor{comment}{// quick sort here}}
+\DoxyCodeLine{00138         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00139         \{}
+\DoxyCodeLine{00140             \textcolor{comment}{// find the pivot index}}
+\DoxyCodeLine{00141             \textcolor{keywordtype}{int} pivotIndex = \mbox{\hyperlink{_quick_sort_8cpp_a1423b1c2df70e77046643559410c6f25_a1423b1c2df70e77046643559410c6f25}{partition}}(anArray, first, last);}
+\DoxyCodeLine{00142             }
+\DoxyCodeLine{00143             \textcolor{comment}{// divide the array and use quick sort for the 2 subarrays}}
+\DoxyCodeLine{00144             \mbox{\hyperlink{_quick_sort_8cpp_ab4e5bb2d74d770195ef6f01f681c5b6f_ab4e5bb2d74d770195ef6f01f681c5b6f}{qSort}}(anArray, first, pivotIndex -\/ 1);}
+\DoxyCodeLine{00145             \mbox{\hyperlink{_quick_sort_8cpp_ab4e5bb2d74d770195ef6f01f681c5b6f_ab4e5bb2d74d770195ef6f01f681c5b6f}{qSort}}(anArray, pivotIndex + 1, last);}
+\DoxyCodeLine{00146         \}   }
+\DoxyCodeLine{00147     \}}
+\DoxyCodeLine{00148 \}}
+
+\end{DoxyCode}
