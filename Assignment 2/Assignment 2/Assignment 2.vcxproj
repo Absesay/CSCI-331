@@ -139,7 +139,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DelimBuffer.h" />
+    <ClInclude Include="Location.h" />
     <ClInclude Include="Record.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DelimBuffer.cpp" />
+    <ClCompile Include="Location.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="QuickSort.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\GiaCopy\us_postal_codes.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
